@@ -3,11 +3,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Hello world!
- *
- */
-public class App 
+ublic class App 
 {
     public static void main( String[] args )
     {
@@ -15,16 +11,14 @@ public class App
      // List of objects of the sweet class 
         List<Sweets> gift = new ArrayList<>();
         //Runtime polymorphism
-        Sweets chco1=new Chocolate("dairymilk","100%", 2,10);
-        gift.add(chco1);
-        Sweets chco2=new Chocolate("5star","100%", 1,20);
-        gift.add(chco2);
-        Sweets chco3=new Candy("skittles","50%", 2,10);
-        gift.add(chco3);
-        Sweets chco4=new Candy("Snickers","20%", 8,10);
-        gift.add(chco4);
-        Sweets chco5=new JellyBeans("Teadybear","20%",5,2);
-        gift.add(chco5);
+        gift.add(new Chocolate("dairymilk","100%", 2,10));
+        gift.add(new Chocolate("kitkat","100%", 3,20));
+        gift.add(new Candy("Skittles","50%", 7,10));
+        gift.add(new Candy("Milk way","20%", 6,10));
+        gift.add(new Jellybeans("Teadybear","27%",5,2));
+        gift.add(new Candy("Laffy Taffy","60%",2,2));
+        gift.add(new Candy("Bars","82%",5,7));
+        gift.add(new Candy("Nuts","75%",6,4));
         List<Sweets> chocolate=new ArrayList<>();
         for(int i=0;i<gift.size();i++){
             if(gift.get(i) instanceof Chocolate){
@@ -67,5 +61,26 @@ public class App
         }
         System.out.println();
         System.out.println("No of Candies is "+count_candies);
+        //candies between range of the cost in between 2 to 5
+        System.out.println("");
+        System.out.println("candies between range of the cost in between 2 to 5\n");
+        for(int i=0;i<gift.size();i++){
+            if(gift.get(i) instanceof Candy){
+                if(gift.get(i).cost<=5 && gift.get(i).cost>=2) {
+                	System.out.println(gift.get(i).name+" Sugar% is "+gift.get(i).type+" cost is "+gift.get(i).cost+" weigth of Candy is "+gift.get(i).weigth+"gms");
+                }
+            }
+        }
+      //candies between range of the cost in between 2 to 5
+        System.out.println("");
+        System.out.println("candies between range of the weigth in between 2 to 9\n");
+        for(int i=0;i<gift.size();i++){
+            if(gift.get(i) instanceof Candy){
+                if(gift.get(i).weigth<=5 && gift.get(i).weigth>=2) {
+                	System.out.println(gift.get(i).name+" Sugar% is "+gift.get(i).type+" cost is "+gift.get(i).cost+" weigth of Candy is "+gift.get(i).weigth+"gms");
+                }
+            }
+        }
+        
     }
 }
