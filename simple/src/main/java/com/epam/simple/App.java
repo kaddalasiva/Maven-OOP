@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-ublic class App 
+public class App 
 {
     public static void main( String[] args )
     {
